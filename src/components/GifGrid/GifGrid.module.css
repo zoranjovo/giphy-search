@@ -1,0 +1,83 @@
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  width: 100%;
+}
+
+.splashTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+}
+.splashTextContainer p {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
+.gifGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.gridItem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: 0.2s;
+  box-shadow: 0 3px 8px rgba(130, 130, 130, 0.6);
+}
+
+.gridItem:hover {
+  cursor: pointer;
+  transform: scale(1.03) translateY(-3px);
+  box-shadow: 0 10px 10px rgba(130, 130, 130, 0.952);
+}
+
+:global(.dark) .gridItem {
+  box-shadow: 0 5px 5px rgba(57, 57, 57, 0.642);
+}
+:global(.dark) .gridItem:hover {
+  box-shadow: 0 10px 20px rgb(91, 91, 91);
+}
+
+.loadMoreBtn {
+  background: linear-gradient(120deg, #4898ed, #0a69cf);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 10px 0 50px 0;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.loadMoreBtn:disabled {
+  background: #e9ecef;
+  color: #adb5bd;
+  cursor: not-allowed;
+}
+.loadMoreBtn:hover:not(:disabled) {
+  background: linear-gradient(120deg, #59a7fa, #1172d9);
+  box-shadow: 0 4px 12px rgba(10, 128, 255, 0.4);
+}
+
+@media (max-width: 600px) {
+  .gifGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    padding: 10px;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,32 @@
+/* dark theme (default) */
+:root {
+  --text: #e0e0e0;
+  --background: #141415;
+  --panel: #1f2021;
+  --outline: #5f6368;
+}
+
+/* light theme */
+:root.light {
+  --text: #202124;
+  --background: #ffffff;
+  --panel: #f1f3f4;
+  --outline: #dadce0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+/* enable transition after app is loaded to prevent flashing */
+body.loaded {
+  transition: color 0.3s, background-color 0.3s;
+}
